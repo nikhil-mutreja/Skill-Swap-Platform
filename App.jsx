@@ -5,7 +5,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FiHome, FiRefreshCcw, FiUser } from 'react-icons/fi';
 import { BiLogOut } from 'react-icons/bi';
-import Profile from './pages/profile';
+import Profile from './profile';
 
 export default function App() {
   return (
