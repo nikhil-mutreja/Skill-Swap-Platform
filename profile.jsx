@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { auth, db } from '../firebase'; // Adjust if your Firebase file path is different
+import { auth, db } from './firebase'; // Adjust if your Firebase file path is different
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 
-const appId = window.__app_id;
+// FIXED: Safe global fallback check prevents ReferenceError in browser
+const appId = typeof window !== 'undefined' && window.__app_id ? window.__app_id : 'default-app';
 
 export default function Profile() {
   const user = auth.currentUser;
